@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GLS Gear Desk · Equipment booking</title><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/" aria-label="GLS Gear Desk home"><span class="brand-mark">G</span><span><b>GLS Gear Desk</b><small>GLS University Institute of Technology</small></span></a><div id="userArea" class="user-area hidden"><span id="userChip"></span><button class="ghost" id="logoutBtn">Sign out</button></div></header>
+  <main>
+    <section id="loginView" class="login-layout">
+      <div class="hero-panel">
+        <div class="hero-copy"><span class="demo-flag">UNOFFICIAL PORTFOLIO DEMO</span><p class="eyebrow">GLS UNIVERSITY INSTITUTE OF TECHNOLOGY</p><h1>Book the gear.<br>Build the project.</h1><p class="lede">A fast equipment desk for cameras, projectors and practical coursework.</p></div>
+        <svg class="gear-art" viewBox="0 0 700 430" role="img" aria-label="Abstract camera and projector illustration"><rect x="82" y="90" width="390" height="245" rx="24" fill="#ff7100"/><rect x="135" y="145" width="190" height="125" rx="16" fill="#222"/><circle cx="230" cy="207" r="65" fill="#f6f4f0"/><circle cx="230" cy="207" r="39" fill="#ff7100"/><circle cx="230" cy="207" r="18" fill="#222"/><rect x="154" y="116" width="86" height="34" rx="9" fill="#222"/><circle cx="411" cy="145" r="14" fill="#222"/><rect x="403" y="196" width="210" height="105" rx="16" fill="#f6f4f0" stroke="#222" stroke-width="8"/><circle cx="548" cy="248" r="34" fill="#222"/><circle cx="548" cy="248" r="16" fill="#ff7100"/><path d="M438 301v48m140-48v48M74 366h550" stroke="#ff7100" stroke-width="12" stroke-linecap="round"/></svg>
+        <div class="hero-metrics"><span><b>05</b> items</span><span><b>02</b> daily slots</span><span><b>01</b> clear workflow</span></div>
+      </div>
+      <div class="login-side"><div class="login-card"><div><p class="eyebrow">ACCESS THE DESK</p><h2>Sign in</h2><p class="muted">Use a synthetic demo account below.</p></div><form id="loginForm"><label>Email address<input id="email" type="email" autocomplete="username" required></label><label>Password<input id="password" type="password" autocomplete="current-password" required></label><button class="primary full" type="submit">Open Gear Desk <span>→</span></button></form><p id="loginError" class="message error hidden" role="alert"></p><div class="demo-box"><strong>Demo access</strong><p>Select an account to fill the form.</p><button class="credential" data-email="aarav@gls-demo.invalid" data-password="Demo123!"><span><b>Aarav · Student</b><small>aarav@gls-demo.invalid</small></span><code>Demo123!</code></button><button class="credential" data-email="meera@gls-demo.invalid" data-password="Demo123!"><span><b>Meera · Student</b><small>meera@gls-demo.invalid</small></span><code>Demo123!</code></button><button class="credential" data-email="kavya@gls-demo.invalid" data-password="Admin123!"><span><b>Kavya · Administrator</b><small>kavya@gls-demo.invalid</small></span><code>Admin123!</code></button></div><p class="disclaimer">Unofficial portfolio demo · All accounts and inventory are synthetic.</p></div></div>
+    </section>
+    <section id="appView" class="app-view hidden">
+      <div class="dashboard-kicker">GLS UNIVERSITY INSTITUTE OF TECHNOLOGY <span>/</span> EQUIPMENT OPERATIONS</div>
+      <div class="welcome-row"><div><p class="eyebrow">GLS GEAR DESK</p><h1 id="greeting">Welcome</h1><p class="muted">Pick a date, compare both half-day slots, and reserve.</p></div><div class="stat"><b id="availableCount">—</b><span>AVAILABLE<br>SLOTS</span></div></div>
+      <nav class="tabs" aria-label="Booking views"><button class="tab active" data-view="browse"><span>01</span> Inventory</button><button class="tab" data-view="mine"><span>02</span> My bookings</button><button id="adminTab" class="tab hidden" data-view="admin"><span>03</span> Desk workflow</button></nav><div id="flash" class="message hidden" role="status"></div>
+      <section id="browsePanel" class="panel-view"><div class="date-strip"><div><label class="filter-label" for="bookingDate">AVAILABILITY DATE</label><input id="bookingDate" type="date"></div><div class="legend"><span><i class="dot free"></i> Ready to book</span><span><i class="dot busy"></i> Unavailable</span></div></div><div class="inventory-head"><div><h2>Equipment inventory</h2><p>Five individually tracked products</p></div><span>LIVE AVAILABILITY</span></div><div id="inventory" class="inventory-grid" aria-live="polite"></div></section>
+      <section id="minePanel" class="panel-view hidden"><div class="section-heading"><div><p class="eyebrow">STUDENT VIEW</p><h2>My bookings</h2><p class="muted">Upcoming and historical reservations.</p></div></div><div id="myBookings"></div></section>
+      <section id="adminPanel" class="panel-view hidden"><div class="section-heading"><div><p class="eyebrow">ADMINISTRATOR VIEW</p><h2>Equipment desk workflow</h2><p class="muted">Verify pickup, then record each return.</p></div><span class="admin-badge">DESK ADMIN</span></div><div id="adminBookings"></div></section>
+      <footer class="app-footer">GLS Gear Desk · Unofficial portfolio demo · Synthetic data only</footer>
+    </section>
+  </main>
+  <dialog id="bookingDialog"><form id="bookingForm"><button type="button" class="dialog-close" aria-label="Close">×</button><p class="eyebrow">NEW RESERVATION</p><h2 id="dialogTitle">Reserve equipment</h2><div class="summary" id="dialogSummary"></div><label>Purpose<textarea id="purpose" maxlength="120" required placeholder="e.g. Record interviews for final project"></textarea></label><p class="muted tiny">Tell the desk what you are working on.</p><button class="primary full" type="submit">Confirm reservation</button><p id="dialogError" class="message error hidden" role="alert"></p></form></dialog>
+  <script src="/app.js" defer></script>
+</body></html>
